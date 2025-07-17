@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
-    <title>Courses | Education</title>
+    <title>Notehive | Student Repository</title>
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="manifest" href="site.webmanifest" />
@@ -24,9 +24,57 @@
     <link rel="stylesheet" href="assets/css/slick.css" />
     <link rel="stylesheet" href="assets/css/nice-select.css" />
     <link rel="stylesheet" href="assets/css/style.css" />
+    <style>
+        .notes-section {
+            border: 1px solid #ccc;
+            margin-bottom: 1rem;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        /* Header styling + background color */
+        .notes-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #e0f7fa;
+            /* ← your chosen bg color */
+            padding: 0.75rem 1rem;
+            cursor: pointer;
+        }
+
+        .notes-title {
+            font-size: 1.25rem;
+            font-weight: bold;
+            color: blueviolet;
+            /* as in your example */
+        }
+
+        /* Toggle button */
+        .toggle-btn {
+            background: none;
+            border: none;
+            font-size: 1.25rem;
+            line-height: 1;
+            transform: rotate(0deg);
+            transition: transform 0.2s ease;
+        }
+
+        /* When collapsed, rotate arrow */
+        .toggle-btn[aria-expanded="false"] {
+            transform: rotate(-90deg);
+        }
+
+        /* Body styling */
+        .notes-body {
+            padding: 1rem;
+            display: block;
+            /* will switch to none when collapsed */
+        }
+    </style>
 </head>
 
-<body style="background-color: rgb(221, 213, 213);">
+<body style="background-color: rgb(221, 213, 213)">
     <!-- ? Preloader Start -->
     <div id="preloader-active">
         <div class="preloader d-flex align-items-center justify-content-center">
@@ -49,230 +97,15 @@
             <div class="section-tittle text-center mb-55">
                 <h2>Subjects for Diploma in Software Engineering</h2>
             </div>
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-xl-7 col-lg-8">
-                        <div class="section-tittle text-center mb-30">
-                            <span style="font-size: 30px; font-weight: bold; color: blueviolet">Academic writing
-                                Notes</span>
-                        </div>
+            <template id="notes-template">
+                <div class="notes-section">
+                    <div class="notes-header">
+                        <span style="font-size: 20px; font-weight: bold;" class="notes-title"></span>
+                        <button class="toggle-btn" aria-expanded="true">▾</button>
                     </div>
+                    <div class="notes-body"></div>
                 </div>
-                <div class="courses-actives" id="notes-academic-writing">
-                    <!-- Notes will be dynamically inserted here -->
-                </div>
-            </div>
-            <br />
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-xl-7 col-lg-8">
-                        <div class="section-tittle text-center mb-30">
-                            <span style="font-size: 30px; font-weight: bold; color: blueviolet">Computer Hardware &
-                                Networking Notes</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="courses-actives" id="notes-hardware-networking">
-                    <!-- Notes will be dynamically inserted here -->
-                </div>
-            </div>
-            <br />
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-xl-7 col-lg-8">
-                        <div class="section-tittle text-center mb-30">
-                            <span style="font-size: 30px; font-weight: bold; color: blueviolet">BioInformatics
-                                Notes</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="courses-actives" id="notes-bioinfo">
-                    <!-- Notes will be dynamically inserted here -->
-                </div>
-            </div>
-            <br />
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-xl-7 col-lg-8">
-                        <div class="section-tittle text-center mb-30">
-                            <span style="font-size: 30px; font-weight: bold; color: blueviolet"> Data Base Management
-                                System Notes</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="courses-actives" id="notes-dbms">
-                    <!-- Notes will be dynamically inserted here -->
-                </div>
-            </div>
-            <br />
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-xl-7 col-lg-8">
-                        <div class="section-tittle text-center mb-30">
-                            <span style="font-size: 30px; font-weight: bold; color: blueviolet">Mathematics for Computer
-                                Science Notes</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="courses-actives" id="notes-mcs">
-                    <!-- Notes will be dynamically inserted here -->
-                </div>
-            </div>
-            <br />
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-xl-7 col-lg-8">
-                        <div class="section-tittle text-center mb-30">
-                            <span style="font-size: 30px; font-weight: bold; color: blueviolet">Object Oriented
-                                Programming Concepts 1</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="courses-actives" id="notes-oopc">
-                    <!-- Notes will be dynamically inserted here -->
-                </div>
-            </div>
-            <br />
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-xl-7 col-lg-8">
-                        <div class="section-tittle text-center mb-30">
-                            <span style="font-size: 30px; font-weight: bold; color: blueviolet">Object Oriented
-                                Programming Concepts 2</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="courses-actives" id="notes-oopc2">
-                    <!-- Notes will be dynamically inserted here -->
-                </div>
-                <!-- Courses area End -->
-                <div class="modal fade" id="noteModal" tabindex="-1" aria-labelledby="noteModalLabel"
-                    aria-hidden="true">
-                    <div class="modal-dialog">
-                        <form id="noteForm" class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="noteModalLabel">Add New Note</h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                    aria-label="Close"></button>
-                            </div>
-                            <div class="modal-body">
-                                <div class="mb-3">
-                                    <label for="subject" class="form-label">Subject</label>
-                                    <input type="text" class="form-control" id="subject" required />
-                                </div>
-                                <div class="mb-3">
-                                    <label for="title" class="form-label">Title</label>
-                                    <input type="text" class="form-control" id="title" required />
-                                </div>
-                                <div class="mb-3">
-                                    <label for="description" class="form-label">Description</label>
-                                    <textarea class="form-control" id="description" rows="2" required></textarea>
-                                </div>
-                                <div class="mb-3">
-                                    <label for="imageUrl" class="form-label">Image URL</label>
-                                    <input type="url" class="form-control" id="imageUrl" required />
-                                </div>
-                                <div class="mb-3">
-                                    <label for="downloadLink" class="form-label">Download Link (PDF)</label>
-                                    <input type="url" class="form-control" id="downloadLink" required />
-                                </div>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="submit" class="btn btn-success">Upload</button>
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
-                                    Cancel
-                                </button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-            <br />
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-xl-7 col-lg-8">
-                        <div class="section-tittle text-center mb-30">
-                            <span style="font-size: 30px; font-weight: bold; color: blueviolet">Object Oriented System
-                                Analysis & Design</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="courses-actives" id="notes-oosad">
-                    <!-- Notes will be dynamically inserted here -->
-                </div>
-            </div>
-            <br />
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-xl-7 col-lg-8">
-                        <div class="section-tittle text-center mb-30">
-                            <span style="font-size: 30px; font-weight: bold; color: blueviolet">React Native & NoSQL
-                                Notes</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="courses-actives" id="notes-react">
-                    <!-- Notes will be dynamically inserted here -->
-                </div>
-            </div>
-            <br />
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-xl-7 col-lg-8">
-                        <div class="section-tittle text-center mb-30">
-                            <span style="font-size: 30px; font-weight: bold; color: blueviolet">Research Methodology
-                                Notes</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="courses-actives" id="notes-research">
-                    <!-- Notes will be dynamically inserted here -->
-                </div>
-            </div>
-            <br />
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-xl-7 col-lg-8">
-                        <div class="section-tittle text-center mb-30">
-                            <span style="font-size: 30px; font-weight: bold; color: blueviolet">Robotic Application
-                                Development & IoT</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="courses-actives" id="notes-radiot">
-                    <!-- Notes will be dynamically inserted here -->
-                </div>
-            </div>
-            <br />
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-xl-7 col-lg-8">
-                        <div class="section-tittle text-center mb-30">
-                            <span style="font-size: 30px; font-weight: bold; color: blueviolet">Software Application
-                                Development Notes</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="courses-actives" id="notes-sad">
-                    <!-- Notes will be dynamically inserted here -->
-                </div>
-            </div>
-            <br />
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-xl-7 col-lg-8">
-                        <div class="section-tittle text-center mb-30">
-                            <span style="font-size: 30px; font-weight: bold; color: blueviolet">Web Development (php &
-                                MySQL) Notes</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="courses-actives" id="notes-web1">
-                    <!-- Notes will be dynamically inserted here -->
-                </div>
-            </div>
-            <br />
-            <!-- Courses area End -->
+            </template>
 
             <div class="modal fade" id="noteModal" tabindex="-1" aria-labelledby="noteModalLabel" aria-hidden="true">
                 <div class="modal-dialog">
@@ -313,7 +146,6 @@
                 </div>
             </div>
         </div>
-
     </main>
     <div id="footer-placeholder"></div>
 
@@ -325,8 +157,23 @@
         <i class="fas fa-plus"></i>
     </button>
     <!-- JS here -->
+    <script>
+        document.querySelectorAll(".notes-section").forEach((section) => {
+            const header = section.querySelector(".notes-header");
+            const body = section.querySelector(".notes-body");
+            const btn = header.querySelector(".toggle-btn");
+
+            // click anywhere on header toggles
+            header.addEventListener("click", () => {
+                const expanded = btn.getAttribute("aria-expanded") === "true";
+                btn.setAttribute("aria-expanded", String(!expanded));
+                body.style.display = expanded ? "none" : "block";
+            });
+        });
+    </script>
     <script src="./assets/js/vendor/modernizr-3.5.0.min.js"></script>
     <script type="module" src="./assets/js/firebase.js"></script>
+    <script src="./assets/js/subjects.js"></script>
     <!-- Jquery, Popper, Bootstrap -->
     <script src="./assets/js/vendor/jquery-1.12.4.min.js"></script>
     <script src="./assets/js/popper.min.js"></script>
