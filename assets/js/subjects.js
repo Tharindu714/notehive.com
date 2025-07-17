@@ -1,47 +1,72 @@
-  const topics = [
-    { id: 'notes-academic-writing',       title: 'Academic Writing Notes' },
-    { id: 'notes-hardware-networking',     title: 'Computer Hardware & Networking Notes' },
-    { id: 'notes-bioinfo',                 title: 'Bioinformatics Notes' },
-    { id: 'notes-dbms',                    title: 'Database Management System Notes' },
-    { id: 'notes-mcs',                     title: 'Mathematics for Computer Science Notes' },
-    { id: 'notes-oopc',                    title: 'Object Oriented Programming Concepts 1' },
-    { id: 'notes-oopc2',                   title: 'Object Oriented Programming Concepts 2' },
-    { id: 'notes-oosad',                   title: 'Object Oriented System Analysis & Design' },
-    { id: 'notes-react',                   title: 'React Native & NoSQL Notes' },
-    { id: 'notes-research',                title: 'Research Methodology Notes' },
-    { id: 'notes-radiot',                  title: 'Robotic Application Development & IoT Notes' },
-    { id: 'notes-sad',                     title: 'Software Application Development Notes' },
-    { id: 'notes-web1',                    title: 'Web Development (PHP & MySQL) Notes' }
-  ];
+document.addEventListener("DOMContentLoaded", () => {
+  // 1. Map each container ID to its list of topics
+  const topicsConfig = {
+    "diploma-container": [
+      { id: "notes-academic-writing", title: "Academic Writing Notes" },
+      {
+        id: "notes-hardware-networking",
+        title: "Computer Hardware & Networking Notes",
+      },
+      { id: "notes-bioinfo", title: "Bioinformatics Notes" },
+      { id: "notes-dbms", title: "Database Management System Notes" },
+      { id: "notes-mcs", title: "Mathematics for Computer Science Notes" },
+      { id: "notes-oopc", title: "Object Oriented Programming Concepts 1" },
+      { id: "notes-oopc2", title: "Object Oriented Programming Concepts 2" },
+      { id: "notes-oosad", title: "Object Oriented System Analysis & Design" },
+      { id: "notes-react", title: "React Native & NoSQL Notes" },
+      { id: "notes-research", title: "Research Methodology Notes" },
+      {
+        id: "notes-radiot",
+        title: "Robotic Application Development & IoT Notes",
+      },
+      { id: "notes-sad", title: "Software Application Development Notes" },
+      { id: "notes-web1", title: "Web Development (PHP & MySQL) Notes" },
+    ],
+    // Higher Diploma topics
+    "higher-diploma-container": [
+      {
+        id: "notes-electronics-se",
+        title: "Electronics for Software Engineering",
+      },
+      { id: "notes-mcs2", title: "Mathematics for Computer Science 2" },
+      {
+        id: "notes-design-patterns1",
+        title: "Object Oriented Design Patterns 1",
+      },
+      { id: "notes-project-management", title: "Project Management" },
+      { id: "notes-quality-assurance", title: "Quality Assurance" },
+      { id: "notes-web-component-dev1", title: "Web Component Development 1" },
+      { id: "notes-web-component-dev2", title: "Web Component Development 2" },
+      { id: "notes-web-programming2", title: "Web Programming 2" },
+    ],
+  };
 
-  // 2. Grab template + destination container
-  const tpl      = document.getElementById('notes-template');
-  const container = document.querySelector('.courses-area'); 
-  // (or another wrapper where you want them all)
+  // 2. Grab the template once
+  const tpl = document.getElementById("notes-template").content;
 
-  // 3. Build everything in one sweep
-  topics.forEach(topic => {
-    const clone = tpl.content.cloneNode(true);
-    const section = clone.querySelector('.notes-section');
-    const titleEl = clone.querySelector('.notes-title');
-    const bodyEl  = clone.querySelector('.notes-body');
-
-    titleEl.textContent     = topic.title;
-    bodyEl.id               = topic.id;
-    section.style.marginBottom = '1rem';  // replicate your <br />
-
-    container.appendChild(clone);
-  });
-
-  // 4. Hook up accordion toggles
-  document.body.querySelectorAll('.notes-section').forEach(section => {
-    const hdr = section.querySelector('.notes-header');
-    const bd  = section.querySelector('.notes-body');
-    const btn = section.querySelector('.toggle-btn');
-
-    hdr.addEventListener('click', () => {
-      const open = btn.getAttribute('aria-expanded') === 'true';
-      btn.setAttribute('aria-expanded', String(!open));
-      bd.style.display = open ? 'none' : 'block';
+  // 3. Populate each container
+  Object.entries(topicsConfig).forEach(([containerId, topics]) => {
+    const container = document.getElementById(containerId);
+    if (!container) return; // skip if missing
+    topics.forEach((topic) => {
+      const clone = tpl.cloneNode(true);
+      const section = clone.querySelector(".notes-section");
+      clone.querySelector(".notes-title").textContent = topic.title;
+      clone.querySelector(".notes-body").id = topic.id;
+      section.style.marginBottom = "1rem";
+      container.appendChild(clone);
     });
   });
+
+  // 4. Hook up toggles for all sections on the page
+  document.querySelectorAll(".notes-section").forEach((section) => {
+    const hdr = section.querySelector(".notes-header");
+    const bd = section.querySelector(".notes-body");
+    const btn = section.querySelector(".toggle-btn");
+    hdr.addEventListener("click", () => {
+      const isOpen = btn.getAttribute("aria-expanded") === "true";
+      btn.setAttribute("aria-expanded", String(!isOpen));
+      bd.style.display = isOpen ? "none" : "block";
+    });
+  });
+});
