@@ -179,7 +179,7 @@ window.addEventListener("DOMContentLoaded", () => {
   loadNotesBySubject("Mathematics for Computer Science", "notes-mcs");
   loadNotesBySubject("OOP Concept 1", "notes-oopc");
   loadNotesBySubject("OOP Concept 2", "notes-oopc2");
-  loadNotesBySubject("OOSAD", "notes-oosad");
+  loadNotesBySubject("Object Oriented System Analysis & Design", "notes-oosad");
   loadNotesBySubject("React Native", "notes-react");
   loadNotesBySubject("Research Methodology", "notes-research");
   loadNotesBySubject("Robotic Application Development & IoT", "notes-radiot");
