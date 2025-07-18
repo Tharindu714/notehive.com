@@ -39,6 +39,16 @@ document.addEventListener("DOMContentLoaded", () => {
       { id: "notes-web-component-dev2", title: "Web Component Development 2" },
       { id: "notes-web-programming2", title: "Web Programming 2" },
     ],
+        // Higher Diploma topics
+    "graduate-diploma-container": [
+      {
+        id: "notes-android",
+        title: "Android Application Development",
+      },
+      { id: "notes-bcd1", title: "Business Component Development 1" },
+      { id: "notes-bcd2", title: "Business Component Development 2" },
+      { id: "notes-cyber-law", title: "Cyber Law" },
+    ],
   };
 
   // 2. Grab the template once

@@ -186,14 +186,25 @@ window.addEventListener("DOMContentLoaded", () => {
   loadNotesBySubject("Software Application Development", "notes-sad");
   loadNotesBySubject("Web Development 1", "notes-web1");
   // Higher Diploma subjects
-  loadNotesBySubject("Electronics for Software Engineering", "notes-electronics-se");
+  loadNotesBySubject(
+    "Electronics for Software Engineering",
+    "notes-electronics-se"
+  );
   loadNotesBySubject("Mathematics for Computer Science 2", "notes-mcs2");
-  loadNotesBySubject("Object Oriented Design Patterns 1", "notes-design-patterns1");
+  loadNotesBySubject(
+    "Object Oriented Design Patterns 1",
+    "notes-design-patterns1"
+  );
   loadNotesBySubject("Project Management", "notes-project-management");
   loadNotesBySubject("Quality Assurance", "notes-quality-assurance");
   loadNotesBySubject("Web Component Development 1", "notes-web-component-dev1");
   loadNotesBySubject("Web Component Development 2", "notes-web-component-dev2");
   loadNotesBySubject("Web Programming 2", "notes-web-programming2");
+  // Graduate Diploma subjects
+  loadNotesBySubject("Android Application Development", "notes-android");
+  loadNotesBySubject("Business Component Development 1", "notes-bcd1");
+  loadNotesBySubject("Business Component Development 2", "notes-bcd2");
+  loadNotesBySubject("Cyber Law", "notes-cyber-law");
   // You can call loadNotesBySubject() more times for other subjects
 });
 
