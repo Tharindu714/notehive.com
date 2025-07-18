@@ -68,7 +68,7 @@
         /* Body styling */
         .notes-body {
             padding: 1rem;
-            display: block;
+            display: none;
             /* will switch to none when collapsed */
         }
     </style>
@@ -101,7 +101,7 @@
                 <div class="notes-section">
                     <div class="notes-header">
                         <span style="font-size: 20px; font-weight: bold;" class="notes-title"></span>
-                        <button class="toggle-btn" aria-expanded="true">▾</button>
+                        <button class="toggle-btn" aria-expanded="false">▾</button>
                     </div>
                     <div class="notes-body"></div>
                 </div>
@@ -116,14 +116,14 @@
                 <div class="notes-section">
                     <div class="notes-header">
                         <span style="font-size: 20px; font-weight: bold;" class="notes-title"></span>
-                        <button class="toggle-btn" aria-expanded="true">▾</button>
+                        <button class="toggle-btn" aria-expanded="false">▾</button>
                     </div>
                     <div class="notes-body"></div>
                 </div>
             </template>
         </div>
 
-                <div class="courses-area section-padding10 fix" id="graduate-diploma-container">
+        <div class="courses-area section-padding10 fix" id="graduate-diploma-container">
             <div class="section-tittle text-center mb-55">
                 <h2>Graduate Diploma in Software Engineering</h2>
             </div>
@@ -131,7 +131,7 @@
                 <div class="notes-section">
                     <div class="notes-header">
                         <span style="font-size: 20px; font-weight: bold;" class="notes-title"></span>
-                        <button class="toggle-btn" aria-expanded="true">▾</button>
+                        <button class="toggle-btn" aria-expanded="false">▾</button>
                     </div>
                     <div class="notes-body"></div>
                 </div>
@@ -187,19 +187,28 @@
     </button>
     <!-- JS here -->
     <script>
-        document.querySelectorAll(".notes-section").forEach((section) => {
-            const header = section.querySelector(".notes-header");
-            const body = section.querySelector(".notes-body");
-            const btn = header.querySelector(".toggle-btn");
+        document.addEventListener("DOMContentLoaded", () => {
+            document.querySelectorAll(".notes-section").forEach((section) => {
+                const header = section.querySelector(".notes-header");
+                const body = section.querySelector(".notes-body");
+                const btn = header.querySelector(".toggle-btn");
 
-            // click anywhere on header toggles
-            header.addEventListener("click", () => {
-                const expanded = btn.getAttribute("aria-expanded") === "true";
-                btn.setAttribute("aria-expanded", String(!expanded));
-                body.style.display = expanded ? "none" : "block";
+                // 1) Initialize collapsed
+                btn.setAttribute("aria-expanded", "false");
+                body.style.display = "none";
+                btn.textContent = "▸";  // collapsed arrow
+
+                // 2) Clicking header toggles
+                header.addEventListener("click", () => {
+                    const expanded = btn.getAttribute("aria-expanded") === "true";
+                    btn.setAttribute("aria-expanded", String(!expanded));
+                    body.style.display = expanded ? "none" : "block";
+                    btn.textContent = expanded ? "▸" : "▾";
+                });
             });
         });
     </script>
+
     <script src="./assets/js/vendor/modernizr-3.5.0.min.js"></script>
     <script type="module" src="./assets/js/firebase.js"></script>
     <script src="./assets/js/subjects.js"></script>
