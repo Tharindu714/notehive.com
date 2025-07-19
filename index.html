@@ -71,6 +71,39 @@
             display: none;
             /* will switch to none when collapsed */
         }
+
+        /* Container for the swarm */
+        .bee-swarm {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 9999;
+        }
+
+        /* Individual bee */
+        .bee {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            background: url('assets/img/bee.png') no-repeat center/contain;
+            animation-name: fly;
+            animation-timing-function: linear;
+            animation-fill-mode: forwards;
+        }
+
+        /* Fly from left off-screen to right off-screen */
+        @keyframes fly {
+            from {
+                transform: translateX(-50px) translateY(var(--startY));
+            }
+
+            to {
+                transform: translateX(100vw) translateY(var(--endY));
+            }
+        }
     </style>
 </head>
 
@@ -182,9 +215,9 @@
     <div id="back-top" class="back-top">
         <a title="Go to Top" href="#"> <i class="fas fa-level-up-alt"></i></a>
     </div>
-    <button id="open-note-dialog" class="fab-btn" title="Add New Note">
+    <!-- <button id="open-note-dialog" class="fab-btn" title="Add New Note">
         <i class="fas fa-plus"></i>
-    </button>
+    </button> -->
     <!-- JS here -->
     <script>
         document.addEventListener("DOMContentLoaded", () => {

@@ -4184,8 +4184,8 @@ hr {
 .courses-area .properties__footer .price span {
   cursor: pointer;
   font-weight: 700;
-  color: #4255a4;
-  font-size: 23px;
+  color: blueviolet;
+  font-size: 20px;
 }
 
 .courses-area .properties:hover .border-btn2 {
