@@ -258,19 +258,19 @@ document.getElementById("noteForm").addEventListener("submit", async (e) => {
   bootstrap.Modal.getInstance(document.getElementById("noteModal")).hide();
 });
 
-fetch("https://raw.githubusercontent.com/Tharindu714/notehive.com/main/footer.html")
+fetch("footer.html")
   .then((response) => response.text())
   .then((data) => {
     document.getElementById("footer-placeholder").innerHTML = data;
   });
 
-fetch("https://raw.githubusercontent.com/Tharindu714/notehive.com/main/header.html")
+fetch("header.html")
   .then((response) => response.text())
   .then((data) => {
     document.getElementById("header-placeholder").innerHTML = data;
   });
 
-fetch("https://raw.githubusercontent.com/Tharindu714/notehive.com/main/slider-area.html")
+fetch("slider-area.html")
   .then((response) => response.text())
   .then((data) => {
     document.getElementById("slider-placeholder").innerHTML = data;
@@ -318,7 +318,7 @@ document.addEventListener('click', e => {
 });
 
 
-fetch("https://raw.githubusercontent.com/Tharindu714/notehive.com/main/service.html")
+fetch("service.html")
   .then((response) => response.text())
   .then((data) => {
     document.getElementById("service-placeholder").innerHTML = data;
