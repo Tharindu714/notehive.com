@@ -258,19 +258,19 @@ document.getElementById("noteForm").addEventListener("submit", async (e) => {
   bootstrap.Modal.getInstance(document.getElementById("noteModal")).hide();
 });
 
-fetch("footer.html")
+fetch("./footer.html")
   .then((response) => response.text())
   .then((data) => {
     document.getElementById("footer-placeholder").innerHTML = data;
   });
 
-fetch("header.html")
+fetch("./header.html")
   .then((response) => response.text())
   .then((data) => {
     document.getElementById("header-placeholder").innerHTML = data;
   });
 
-fetch("slider-area.html")
+fetch("./slider-area.html")
   .then((response) => response.text())
   .then((data) => {
     document.getElementById("slider-placeholder").innerHTML = data;
@@ -318,7 +318,7 @@ document.addEventListener('click', e => {
 });
 
 
-fetch("service.html")
+fetch("./service.html")
   .then((response) => response.text())
   .then((data) => {
     document.getElementById("service-placeholder").innerHTML = data;
