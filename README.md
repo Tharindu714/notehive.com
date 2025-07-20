@@ -113,11 +113,9 @@ notehive.com/                   # Root of repo and GitHub Pages site
 
 > *Add your site screenshots here*
 
-```
-![Home](path/to/home_screenshot.png)
-![Courses Page](path/to/courses_screenshot.png)
-![Service Page](path/to/service_screenshot.png)
-```
+<img width="1351" height="603" alt="image" src="https://github.com/user-attachments/assets/9a9862b0-c1bf-48a1-b9b5-24def56f2c04" />
+<img width="1350" height="603" alt="image" src="https://github.com/user-attachments/assets/fdf58ff2-b78c-4d7c-b168-f740a5b9c32c" />
+<img width="1350" height="599" alt="image" src="https://github.com/user-attachments/assets/09c98c37-8353-49c4-85ef-96a55f727ee3" />
 
 ---
 
