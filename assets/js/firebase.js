@@ -206,6 +206,10 @@ window.addEventListener("DOMContentLoaded", () => {
   loadNotesBySubject("Business Component Development 1", "notes-bcd1");
   loadNotesBySubject("Business Component Development 2", "notes-bcd2");
   loadNotesBySubject("Cyber Law", "notes-cyber-law");
+  loadNotesBySubject(
+    "Object Oriented Design Patterns 2",
+    "notes-design-patterns2"
+  );
   // You can call loadNotesBySubject() more times for other subjects
 });
 

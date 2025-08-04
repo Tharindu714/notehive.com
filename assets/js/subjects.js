@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
       { id: "notes-web-component-dev2", title: "Web Component Development 2" },
       { id: "notes-web-programming2", title: "Web Programming 2" },
     ],
-        // Higher Diploma topics
+    // Higher Diploma topics
     "graduate-diploma-container": [
       {
         id: "notes-android",
@@ -48,6 +48,10 @@ document.addEventListener("DOMContentLoaded", () => {
       { id: "notes-bcd1", title: "Business Component Development 1" },
       { id: "notes-bcd2", title: "Business Component Development 2" },
       { id: "notes-cyber-law", title: "Cyber Law" },
+      {
+        id: "notes-design-patterns2",
+        title: "Object Oriented Design Patterns 2",
+      },
     ],
   };
 
