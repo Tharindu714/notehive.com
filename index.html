@@ -88,7 +88,7 @@
             position: absolute;
             width: 40px;
             height: 40px;
-            background: url('assets/img/bee.png') no-repeat center/contain;
+            background: url("assets/img/bee.png") no-repeat center/contain;
             animation-name: fly;
             animation-timing-function: linear;
             animation-fill-mode: forwards;
@@ -124,16 +124,22 @@
     <main>
         <div id="slider-placeholder"></div>
         <div id="service-placeholder"></div>
-
+        <!-- Quick Navigation Start -->
+        <nav class="course-nav" style="text-align: center; margin-bottom: 20px;">
+            <a href="#diploma" class="btn btn-outline-primary m-2">Diploma</a>
+            <a href="#higher-diploma" class="btn btn-outline-primary m-2">Higher Diploma</a>
+            <a href="#graduate-diploma" class="btn btn-outline-primary m-2">Graduate Diploma</a>
+        </nav>
+        <!-- Quick Navigation End -->
         <!-- Courses area start -->
         <div class="courses-area section-padding10 fix" id="diploma-container">
             <div class="section-tittle text-center mb-55">
-                <h2>Subjects for Diploma in Software Engineering</h2>
+                <h2 id="diploma">Subjects for Diploma in Software Engineering</h2>
             </div>
             <template id="notes-template">
                 <div class="notes-section">
                     <div class="notes-header">
-                        <span style="font-size: 20px; font-weight: bold;" class="notes-title"></span>
+                        <span style="font-size: 20px; font-weight: bold" class="notes-title"></span>
                         <button class="toggle-btn" aria-expanded="false">▾</button>
                     </div>
                     <div class="notes-body"></div>
@@ -143,12 +149,14 @@
 
         <div class="courses-area section-padding10 fix" id="higher-diploma-container">
             <div class="section-tittle text-center mb-55">
-                <h2>Subjects for Higher Diploma in Software Engineering</h2>
+                <h2 id="higher-diploma">
+                    Subjects for Higher Diploma in Software Engineering
+                </h2>
             </div>
             <template id="notes-template1">
                 <div class="notes-section">
                     <div class="notes-header">
-                        <span style="font-size: 20px; font-weight: bold;" class="notes-title"></span>
+                        <span style="font-size: 20px; font-weight: bold" class="notes-title"></span>
                         <button class="toggle-btn" aria-expanded="false">▾</button>
                     </div>
                     <div class="notes-body"></div>
@@ -158,12 +166,14 @@
 
         <div class="courses-area section-padding10 fix" id="graduate-diploma-container">
             <div class="section-tittle text-center mb-55">
-                <h2>Graduate Diploma in Software Engineering</h2>
+                <h2 id="graduate-diploma">
+                    Graduate Diploma in Software Engineering
+                </h2>
             </div>
             <template id="notes-template1">
                 <div class="notes-section">
                     <div class="notes-header">
-                        <span style="font-size: 20px; font-weight: bold;" class="notes-title"></span>
+                        <span style="font-size: 20px; font-weight: bold" class="notes-title"></span>
                         <button class="toggle-btn" aria-expanded="false">▾</button>
                     </div>
                     <div class="notes-body"></div>
@@ -229,7 +239,7 @@
                 // 1) Initialize collapsed
                 btn.setAttribute("aria-expanded", "false");
                 body.style.display = "none";
-                btn.textContent = "▸";  // collapsed arrow
+                btn.textContent = "▸"; // collapsed arrow
 
                 // 2) Clicking header toggles
                 header.addEventListener("click", () => {
