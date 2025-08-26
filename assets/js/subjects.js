@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
         id: "notes-hardware-networking",
         title: "Computer Hardware & Networking Notes",
       },
-      { id: "notes-bioinfo", title: "Bioinformatics Notes" },
+      { id: "notes-bioinfo", title: "Bioinformatics & Guest Lectures Notes" },
       { id: "notes-dbms", title: "Database Management System Notes" },
       { id: "notes-mcs", title: "Mathematics for Computer Science Notes" },
       { id: "notes-oopc", title: "Object Oriented Programming Concepts 1" },
