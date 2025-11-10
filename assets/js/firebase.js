@@ -210,6 +210,7 @@ window.addEventListener("DOMContentLoaded", () => {
     "Object Oriented Design Patterns 2",
     "notes-design-patterns2"
   );
+  loadNotesBySubject("Data Structures & Algorithms", "notes-dsa");
   // You can call loadNotesBySubject() more times for other subjects
 });
 
