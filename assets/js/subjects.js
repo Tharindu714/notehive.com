@@ -52,6 +52,7 @@ document.addEventListener("DOMContentLoaded", () => {
         id: "notes-design-patterns2",
         title: "Object Oriented Design Patterns 2",
       },
+      { id: "notes-dsa", title: "Data Structures & Algorithms" },
     ],
   };
 
